@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: python-app
+  name: python-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: python-app
+    spec:
+      containers:
+      - image: techvault2024/python-app
+        name: python-app
+        ports:
+        - containerPort: 5000
+
